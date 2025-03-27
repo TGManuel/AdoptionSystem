@@ -1,5 +1,5 @@
 {
-  "name": "lab2",
+  "name": "adoptionsystem",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "adoptionsystem": "file:",
     "argon2": "^0.41.1",
     "bcrypt": "^5.1.1",
     "bcryptjs": "^2.4.3",
@@ -20,14 +21,15 @@
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
     "express-validator": "^7.2.1",
-    "helmet": "^8.0.0",
+    "helmet": "^8.1.0",
     "jsonwebtoken": "^9.0.2",
-    "lab2": "file:",
-    "mongoose": "^8.9.5",
+    "mongoose": "^8.13.0",
     "morgan": "^1.10.0",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^3.1.9",
     "timespan": "^2.3.0"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }

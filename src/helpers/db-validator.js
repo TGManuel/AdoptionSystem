@@ -1,28 +1,28 @@
-import Rol from "../rol/rol.model.js";
-import Usuario from "../users/user.model.js";
+import Role from '../role/role.model.js';
+import User from '../users/user.model.js';
 
+export const esRoleValido = async (role = '') => {
 
+    const existeRol = await Role.findOne({ role });
 
-export const isValidRol = async(rol='')=>{
-    const existenteRol = await Rol.findOne({rol})
-
-    if (!existenteRol) {
-        throw new Error(`El rol ${rol} es inexistente`)
+    if(!existeRol){
+        throw new Error(`El rol ${ role } no existe en la base de datos`);
     }
 }
 
+export const existenteEmail = async (correo = ' ') => {
 
-export const existentEmail=async(correo='')=>{
-    const existenteEmail = await Usuario.findOne({correo})
+    const existeEmail = await User.findOne({ correo });
 
-    if (existenteEmail) {
-        throw new Error(`El mail ${correo} ya existe`)
+    if(existeEmail){
+        throw new Error(`El correo ${ correo } ya existe en la base de datos`);
     }
 }
 
-export const existentUserById = async (id=" ") => {
-    const userExist = await Usuario.findById(id)
-    if (!userExist) {
-        throw new Error(`El ID ${id} no existe`)
+export const existeUsuarioById = async (id = '') => {
+    const existeUsuario = await User.findById(id);
+
+    if(!existeUsuario){
+        throw new Error(`El ID ${id} no existe`);
     }
 }

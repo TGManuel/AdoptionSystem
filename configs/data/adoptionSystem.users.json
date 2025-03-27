@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "67e50c67a80e482add0d5295"
+  },
+  "name": "prueba1",
+  "surname": "lo edite",
+  "email": "prueba1@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$MAd2aNP7qX267TvNxz+KTQ$iwfyQRwp5646NhPS46jz/g7Lp8Rywf9e+jFcXE1UmXI",
+  "profilePicture": null,
+  "phone": "12345678",
+  "role": "ADMIN_ROLE",
+  "estado": false,
+  "createdAt": {
+    "$date": "2025-03-27T08:29:27.717Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-27T08:38:58.327Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e50f9a533dd17f8fc98ede"
+  },
+  "name": "prueba2",
+  "surname": "segunda",
+  "username": "p2",
+  "email": "prueba2@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$8l+90KnfDj7zRpQaSOQfgA$0fJ16Ezx63Nx7KQN/G+cCoDj/2jXKC0nrnhRDfjTzAA",
+  "profilePicture": null,
+  "phone": "87654321",
+  "role": "ADMIN_ROLE",
+  "estado": true,
+  "createdAt": {
+    "$date": "2025-03-27T08:43:06.923Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-27T08:43:06.923Z"
+  }
+}]

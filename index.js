@@ -1,7 +1,5 @@
+import { config } from 'dotenv';
+import { initServer } from './configs/server.js';
 
-import { config } from "dotenv";
-config() 
-
-import { initServer } from "./config/server.js";
-console.log("FLAG")
-initServer()
+config();
+initServer();

@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "67e51143533dd17f8fc98ee3"
+  },
+  "name": "chewis",
+  "description": " a big pig",
+  "age": 5,
+  "type": "DOMESTICO",
+  "keeper": {
+    "$oid": "67e50f9a533dd17f8fc98ede"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-27T08:50:11.798Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-27T08:50:11.798Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67e51255533dd17f8fc98eed"
+  },
+  "name": "chewis2",
+  "description": " a big pig",
+  "age": 5,
+  "type": "DOMESTICO",
+  "keeper": {
+    "$oid": "67e50f9a533dd17f8fc98ede"
+  },
+  "status": false,
+  "createdAt": {
+    "$date": "2025-03-27T08:54:45.931Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-27T08:55:09.352Z"
+  }
+}]

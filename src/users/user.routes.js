@@ -1,45 +1,47 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import {getUsers,getUserById,updateUser, updatePass} from "./users.controller.js"
-import {existentUserById} from "../helpers/db-validator.js"
-import { validarCampos } from "../middlewares/validar-campos.js"; 
-import { uploadProfilePricture } from "../middlewares/multer-upload.js";
+import { getUsers, getUserById, updateUser, deleteUser } from "./user.controller.js"
+import { existeUsuarioById } from "../helpers/db-validator.js"
+import { validarCampos } from "../middlewares/validar-campos.js";
+import { uploadProfilePicture } from "../middlewares/multer-upload.js";
+import { tieneRole } from "../middlewares/validar-roles.js";
+import { validarJWT } from "../middlewares/validar-jwt.js";
 
-const router = Router()
+const router = Router();
 
-
-router.get("/",getUsers)
+router.get("/", getUsers);
 
 router.get(
-    "/findUser/:id", 
+    "/findUser/:id",
     [
-        check("id", "Invalid id").isMongoId(), 
-        check("id").custom(existentUserById), 
+        check("id", "No es un ID válido").isMongoId(),
+        check("id").custom(existeUsuarioById),
         validarCampos
     ],
     getUserById
 )
 
 router.put(
-    '/:id', 
-    uploadProfilePricture.single('profilePicture'),
+    "/:id",
+    uploadProfilePicture.single('profilePicture'),
     [
-        check("id", "Invalid id").isMongoId(), 
-        check("id").custom(existentUserById),
+        check("id", "No es un ID válido").isMongoId(),
+        check("id").custom(existeUsuarioById),
         validarCampos
     ],
     updateUser
 )
 
-router.put(
-    '/updatePassword/:id', 
+router.delete(
+    "/:id",
     [
-        check("id", "Invalid id").isMongoId(),
-        check("id").custom(existentUserById),
+        validarJWT,
+        tieneRole("ADMIN_ROLE", "VENTAS_ROLE"),
+        check("id", "No es un ID válido").isMongoId(),
+        check("id").custom(existeUsuarioById),
         validarCampos
     ],
-    updatePass
+    deleteUser
 )
 
-
-export default router
+export default router;

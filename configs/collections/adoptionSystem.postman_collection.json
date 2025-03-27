@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "2e299968-6acf-4ac4-bd36-5917a8db27ff",
+		"name": "adoptionSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42642521"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"prueba2\",\r\n    \"surname\":\"segunda\",\r\n    \"username\":\"p2\",\r\n    \"email\":\"prueba2@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"phone\": \"87654321\",\r\n    \"role\":\"ADMIN_ROLE\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"prueba2@gmail.com\",\r\n    \"password\":\"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "traer usuarios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/users/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/users/findUser/67e50c67a80e482add0d5295",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"users",
+						"findUser",
+						"67e50c67a80e482add0d5295"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar users",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"surname\":\"lo edite\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/users/67e50c67a80e482add0d5295",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"users",
+						"67e50c67a80e482add0d5295"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar user",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGM2N2E4MGU0ODJhZGQwZDUyOTUiLCJpYXQiOjE3NDMwNjQyODMsImV4cCI6MTc0MzA2Nzg4M30.NjB48FjdqX9RQ3V6YkZjqgaGZQQl1D_TSkX7ZLBfWk8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/users/67e50c67a80e482add0d5295",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"users",
+						"67e50c67a80e482add0d5295"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar pet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"chewis\",\r\n    \"description\" : \" a big pig\",\r\n    \"age\" : 5,\r\n    \"type\" : \"domestico\",\r\n    \"email\" : \"prueba2@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/pets/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar pets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/pets/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar pet",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/pets/67e51143533dd17f8fc98ee3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						"67e51143533dd17f8fc98ee3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar pet",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/pets/67e51255533dd17f8fc98eed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"pets",
+						"67e51255533dd17f8fc98eed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "agregar una date",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2000-10-10\",\r\n    \"description\":\"chewis tiene sueño\",\r\n    \"email\":\"prueba2@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/dates/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"dates",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar dates",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/dates/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"dates",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscar date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/dates/forOne/67e5144e8777662eb4f020c2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"dates",
+						"forOne",
+						"67e5144e8777662eb4f020c2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "actualizar date",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\":\"2025-10-10\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/dates/update/67e5144e8777662eb4f020c2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"dates",
+						"update",
+						"67e5144e8777662eb4f020c2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eliminar date",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2U1MGY5YTUzM2RkMTdmOGZjOThlZGUiLCJpYXQiOjE3NDMwNjUwMDksImV4cCI6MTc0MzA2ODYwOX0.YfneoWTgq3KUkmgPzWTmBi0FB5I5CF61tKo056YYbnI",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/adoptionSystem/v1/dates/delete/67e515edd3bc896a696920dd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"adoptionSystem",
+						"v1",
+						"dates",
+						"delete",
+						"67e515edd3bc896a696920dd"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
